@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Reservaciones</title>
+</head>
+
+<body>
+
+<h1>Crear Reservación</h1>
+
+<label>Cliente</label>
+<br>
+<input id="client">
+<br><br>
+
+<label>Habitación</label>
+<br>
+<input id="room">
+<br><br>
+
+<label>Entrada</label>
+<br>
+<input type="date" id="checkin">
+<br><br>
+
+<label>Salida</label>
+<br>
+<input type="date" id="checkout">
+<br><br>
+
+<button onclick="createReservation()">Reservar</button>
+
+<p id="result"></p>
+
+<script>
+
+function createReservation(){
+
+let client = document.getElementById("client").value;
+let room = document.getElementById("room").value;
+
+document.getElementById("result").innerText =
+"Reservación registrada para " + client + " en habitación " + room;
+
+}
+
+</script>
+
+</body>
+</html>
