@@ -12,4 +12,11 @@ En este sprint se establecieron las bases del proyecto:
 - Configuración inicial del backend
 - Definición preliminar de la base de datos
 
-## Estructura del proyecto
+## Sprint 2 – Gestión de reservaciones
+
+En este sprint se implementó:
+
+- módulo de gestión de habitaciones
+- sistema de reservaciones
+- validación básica de disponibilidad
+- flujo operativo del sistema hotelero
