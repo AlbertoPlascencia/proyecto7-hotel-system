@@ -7,17 +7,51 @@
 <body>
 
 <h1>Sistema Web Hotelero</h1>
-<p>Proyecto de la materia Proyecto VII</p>
+<p>Proyecto VII</p>
 
-<h2>Login (simulado)</h2>
+<h2>Login</h2>
 
-<input placeholder="Usuario">
+<label>Usuario</label>
+<br>
+<input id="username" placeholder="Usuario">
 <br><br>
 
-<input placeholder="Contraseña" type="password">
+<label>Contraseña</label>
+<br>
+<input id="password" type="password" placeholder="Contraseña">
 <br><br>
 
-<button>Entrar</button>
+<button onclick="login()">Entrar</button>
+
+<p id="resultado"></p>
+
+<script>
+
+function login(){
+
+  let user = document.getElementById("username").value;
+  let pass = document.getElementById("password").value;
+
+  if(user === "admin" && pass === "1234"){
+
+    document.getElementById("resultado").innerText = "Acceso correcto";
+
+    // redirige al sistema
+    setTimeout(() => {
+      window.location.href = "rooms.html";
+    }, 1000);
+
+  }
+  else{
+
+    document.getElementById("resultado").innerText =
+    "Usuario o contraseña incorrectos";
+
+  }
+
+}
+
+</script>
 
 </body>
 </html>
