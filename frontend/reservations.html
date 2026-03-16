@@ -6,24 +6,33 @@
 
 <body>
 
-<h1>Crear Reservación</h1>
+<h1>Sistema de Reservaciones</h1>
+
+<a href="rooms.html">Ver habitaciones</a>
+<br><br>
+
+<h2>Crear Reservación</h2>
 
 <label>Cliente</label>
 <br>
-<input id="client">
+<input id="client" placeholder="Nombre del cliente">
 <br><br>
 
 <label>Habitación</label>
 <br>
-<input id="room">
+<select id="room">
+<option value="101">101 - Sencilla</option>
+<option value="102">102 - Doble</option>
+<option value="103">103 - Suite</option>
+</select>
 <br><br>
 
-<label>Entrada</label>
+<label>Fecha de entrada</label>
 <br>
 <input type="date" id="checkin">
 <br><br>
 
-<label>Salida</label>
+<label>Fecha de salida</label>
 <br>
 <input type="date" id="checkout">
 <br><br>
@@ -32,15 +41,61 @@
 
 <p id="result"></p>
 
+<h2>Reservaciones registradas</h2>
+
+<ul id="reservationList"></ul>
+
 <script>
+
+let reservations = [];
 
 function createReservation(){
 
 let client = document.getElementById("client").value;
 let room = document.getElementById("room").value;
+let checkin = document.getElementById("checkin").value;
+let checkout = document.getElementById("checkout").value;
+
+if(client === "" || checkin === "" || checkout === ""){
+  document.getElementById("result").innerText =
+  "Por favor completa todos los campos";
+  return;
+}
+
+let reservation = {
+client,
+room,
+checkin,
+checkout
+};
+
+reservations.push(reservation);
 
 document.getElementById("result").innerText =
-"Reservación registrada para " + client + " en habitación " + room;
+"Reservación confirmada para " + client;
+
+showReservations();
+
+}
+
+function showReservations(){
+
+let list = document.getElementById("reservationList");
+list.innerHTML = "";
+
+reservations.forEach(r => {
+
+let item = document.createElement("li");
+
+item.innerText =
+"Cliente: " + r.client +
+" | Habitación: " + r.room +
+" | Entrada: " + r.checkin +
+" | Salida: " + r.checkout;
+
+list.appendChild(item);
+
+});
 
 }
 
