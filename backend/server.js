@@ -9,39 +9,85 @@ let rooms = [
 let reservations = [];
 
 function showRooms(){
- console.log("Habitaciones disponibles:");
- rooms.forEach(r => console.log(r.number + " - " + r.status));
+
+ console.log("\nHabitaciones disponibles:");
+
+ rooms.forEach(room => {
+
+   console.log(
+     "Habitación " + room.number +
+     " | Tipo: " + room.type +
+     " | Estado: " + room.status
+   );
+
+ });
+
 }
 
+
+// Crear reservación
 function createReservation(client, roomNumber, checkin, checkout){
 
  let room = rooms.find(r => r.number === roomNumber);
 
  if(!room){
-   console.log("Habitación no encontrada");
+   console.log("Error: habitación no encontrada");
    return;
  }
 
  if(room.status !== "Disponible"){
-   console.log("Habitación no disponible");
+   console.log("Error: la habitación ya está ocupada");
    return;
  }
 
- room.status = "Ocupada";
-
- reservations.push({
+ let reservation = {
    client,
    roomNumber,
    checkin,
    checkout
+ };
+
+ reservations.push(reservation);
+
+ room.status = "Ocupada";
+
+ console.log("Reservación creada correctamente para:", client);
+
+}
+
+
+// Mostrar reservaciones
+function showReservations(){
+
+ console.log("\nReservaciones registradas:");
+
+ if(reservations.length === 0){
+   console.log("No hay reservaciones todavía");
+   return;
+ }
+
+ reservations.forEach(r => {
+
+   console.log(
+     "Cliente: " + r.client +
+     " | Habitación: " + r.roomNumber +
+     " | Entrada: " + r.checkin +
+     " | Salida: " + r.checkout
+   );
+
  });
 
- console.log("Reservación creada para", client);
 }
+
+
+// Simulación del sistema
 
 showRooms();
 
 createReservation("Juan Perez",101,"2026-03-10","2026-03-12");
 
-console.log("Reservaciones actuales:");
-console.log(reservations);
+createReservation("Maria Lopez",101,"2026-03-15","2026-03-18");
+
+showReservations();
+
+showRooms();
