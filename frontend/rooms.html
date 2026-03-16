@@ -8,6 +8,10 @@
 
 <h1>Gestión de Habitaciones</h1>
 
+<a href="reservations.html">Crear reservación</a>
+
+<br><br>
+
 <table border="1">
 
 <tr>
@@ -15,30 +19,69 @@
 <th>Tipo</th>
 <th>Precio</th>
 <th>Estado</th>
+<th>Acción</th>
 </tr>
 
 <tr>
 <td>101</td>
 <td>Sencilla</td>
 <td>900</td>
-<td>Disponible</td>
+<td id="status101">Disponible</td>
+<td>
+<button onclick="toggleRoom(101)">Cambiar estado</button>
+</td>
 </tr>
 
 <tr>
 <td>102</td>
 <td>Doble</td>
 <td>1200</td>
-<td>Disponible</td>
+<td id="status102">Disponible</td>
+<td>
+<button onclick="toggleRoom(102)">Cambiar estado</button>
+</td>
 </tr>
 
 <tr>
 <td>103</td>
 <td>Suite</td>
 <td>2000</td>
-<td>Disponible</td>
+<td id="status103">Disponible</td>
+<td>
+<button onclick="toggleRoom(103)">Cambiar estado</button>
+</td>
 </tr>
 
 </table>
+
+<p id="message"></p>
+
+<script>
+
+function toggleRoom(roomNumber){
+
+let status = document.getElementById("status"+roomNumber);
+
+if(status.innerText === "Disponible"){
+
+status.innerText = "Ocupada";
+
+document.getElementById("message").innerText =
+"Habitación " + roomNumber + " ahora está ocupada";
+
+}
+else{
+
+status.innerText = "Disponible";
+
+document.getElementById("message").innerText =
+"Habitación " + roomNumber + " ahora está disponible";
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
