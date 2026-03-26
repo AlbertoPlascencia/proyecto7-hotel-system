@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Formulario de Satisfacción" />
+	<meta name="keywords" content="San Juan Cosala" />
+	<title>Formulario de Satisfacción | Hotel Balneario San Juan Cosala</title>
+<style>body {
+  background-color: aqua;
+  background-image: url('ruta/de/tu/imagen.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.formulario {
+  width: 100%;
+   background-color: white;
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 50px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+ 
+}
+
+.formulario:hover {
+ 
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+h2, h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Estilo para los cuadros de entrada */
+.cuadros {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}
+
+/* Estilo para los botones redondos */
+
+
+  .boton {
+    background-color: aqua;
+    border-radius: 100px;
+    color: black;
+    padding: 30px 500px;
+    transition: transform 0.3s ease;
+  }
+  
+  .boton:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+    .rating {
+            display: flex;
+            justify-content: center;
+        }
+
+        .rating-item {
+            text-align: center;
+        }
+
+        .rating-input {
+            display: none;
+        }
+.rating-input:checked + label img {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+    border-radius: 180px;
+    transition: box-shadow 0.3s ease-in-out;
+    animation: bounce 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Agregada una animación de salto */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); /* Mantener la posición en el primer y último frame */
+    }
+    40% {
+        transform: translateY(-20px); /* Salto hacia arriba */
+    }
+    60% {
+        transform: translateY(-10px); /* Caída después del salto */
+    }
+}
+</style>
+	
+</head>
+<body>
+	<div style="float: left; margin-right: 80px;">
+		
+	</div>
+	
+	<hr>
+	<form action="registro2.php" method="POST">
+		<div class="formulario">
+			<div style="text-align: center;">
+				<img src="Logo.jpg" width="600" height="300">
+			</div>
+			<br>
+			<br>
+			<h1>¿Cómo calificaría usted su experiencia con nosotros?</h1>
+			<br><br>
+			<center>
+				<div class="rating" style="display: flex; justify-content: center;">
+					<div style="text-align: center;">
+						<label for="estrella3"><img src="excelente.png" width="300" height="300"></label>
+						<br>
+						<input type="radio" name="estrellas" id="estrella3" value="3" />
+					</div>
+					<div style="text-align: center;">
+						<label for="estrella2"><img src="bueno.png" width="300" height="300"></label>
+						<br>
+						<input type="radio" name="estrellas" id="estrella2" value="2" />
+					</div>
+					<div style="text-align: center;">
+						<label for="estrella1"><img src="malo.png" width="300" height="300"></label>
+						<br>
+						<input type="radio" name="estrellas" id="estrella1" value="1" />
+					</div> 
+				</div> 
+			</center>
+			<br><br><br>
+		
+		</div>
+	</form>
+
+	<script>
+		window.addEventListener("load", function () {
+			const stars = document.querySelectorAll(".rating input[type='radio']");
+			for (const star of stars) {
+				star.addEventListener("change", function () {
+					const form = this.closest("form");
+					form.submit();
+				});
+			}
+		});
+
+  // Obtener el valor del parámetro de consulta "enviado"
+  const urlParams = new URLSearchParams(window.location.search);
+  const enviado = urlParams.get('enviado');
+
+  // Si se acaba de enviar una encuesta, mostrar un mensaje de alerta durante 3 segundos
+  if (enviado === 'true') {
+    alert('¡Gracias por enviar la encuesta!');
+    setTimeout(() => {
+      alert('Serás redirigido a la página principal ahora.');
+    }, 2000);
+  } 
+
+	</script>
+	  
+</body>
+</html>

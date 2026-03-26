@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de satisfaccion</title>
+ 
+<style>body {
+    font-family: Arial, sans-serif;
+    background-color: aqua; /* Soft gray background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Center align heading elements */
+h1, h2 {
+    text-align: center;
+}
+
+/* Container for the multi-step form */
+#multi-step-form-container {
+    margin-top: 1rem;
+    max-width:   1000px;
+    margin:  auto;
+    padding: 2rem;
+    background-color: white; /* White background */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+.span{
+  text-align: center
+}
+
+/* Center align text elements */
+.text-center {
+    text-align: center;
+}
+
+/* Center align elements horizontally */
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Remove left padding */
+.pl-0 {
+    padding-left: 0;
+}
+
+/* Common button styles */
+.button, .submit-btn {
+    padding: 1rem 3rem;
+    border: none;
+    background-color: #7ac7fd; /* Aqua button */
+    color: white;
+    border-radius: 8rem;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn {
+    background-color: #71a8b2; /* Slightly darker aqua button */
+    font-weight: bold;
+}
+
+.button:hover, .submit-btn:hover {
+    background-color: #6a9ca5; /* Darker aqua on hover */
+    transform: scale(1.05);
+}
+
+.submit-btn:active {
+    background-color: #5b8c95; /* Darker aqua on active */
+    transform: scale(0.98);
+}
+
+/* Add spacing at the top */
+.mt-3 {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* Hide element */
+.d-none {
+    display: none;
+}
+
+/* Container styles */
+.container {
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white-smoke; /* White background */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+}
+
+/* Form header styles */
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header h1 {
+    margin: 0;
+    color: #a5d1e2; /* Aqua color */
+}
+
+/* Form step styles */
+.form-step {
+    margin-bottom: 1rem;
+    background-color: white; /* Soft gray background */
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.form-step h2 {
+    margin-bottom: 1rem;
+}
+
+/* Styling for input fields */
+.cuadros {
+   width: 100%;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}
+
+/* Rating styles */
+ 
+.rating {
+  display: flex;
+  justify-content: center;
+}
+
+.rating-item {
+  text-align: center;
+  margin: 10px;
+}
+
+.rating-input {
+  display: none;
+}
+
+.rating-input:checked + label img {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+  /* Estilo para el select */
+#room {
+ width: 90%;
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  
+  
+}
+
+#room:hover,
+#room:focus {
+ /* Cambio de color del borde en hover y focus */
+}
+
+
+/* Button container for centering */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+/* Agrega regla de medios para estilos responsivos */
+@media screen and (max-width: 600px) {
+    /* Ajusta el padding del formulario en dispositivos pequeños */
+     img {
+    max-width: 100%;
+    height: auto;
+  }
+    #multi-step-form-container {
+        padding: 1rem;
+    }
+    
+    /* Ajusta el tamaño de fuente para pasos y botones en dispositivos pequeños */
+    .form-step h2, .button, .submit-btn {
+        font-size: 1rem;
+    }
+    
+    /* Ajusta el tamaño de fuente para campos de entrada en dispositivos pequeños */
+  .cuadros {
+   width: 90%;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}
+    
+    /* Ajusta el tamaño de las imágenes en la evaluación en dispositivos pequeños */
+    .rating-item label img {
+        width: 50px;
+        height: 50px;
+    }
+    .select {
+       width: 90%;
+  padding: 20px;
+     
+    }
+       #room {
+       width: 90%;
+ 
+    }
+    
+    /* Ajusta el tamaño de fuente para el select en dispositivos pequeños */
+    
+}</style>
+
+</head>
+<body>
+    <form action="balneario.php" method="POST">
+    <div>
+      
+        <div id="multi-step-form-container">
+            <!-- Form Steps / Progress Bar -->
+            <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
+                <!-- ... Steps ... -->
+            </ul>
+            <!-- Step Wise Form Content -->
+            <form id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST">
+                <!-- Step 1 Content -->
+                <section id="step-1" class="form-step">
+                  
+                  	<center><img src="Logo.jpg" width="600" height="300"></center>
+			<div style="text-align: right;"></div>
+		
+			<center><strong><h1>Registro</h1></strong></center>
+			
+			<center>
+				<br><label for="firstname"><h2>Nombre (s)</h2></label>
+				<input class="cuadros" type="text" id="firstname" name="firstname" >
+				<br><br><label for="phone"><h2>WhatsApp</h2></label>
+				<input class="cuadros" type="tel" id="phone" name="phone" >
+                    <div class="mt-3">
+                        <!-- ... Form inputs ... -->
+                    </div>
+                    <div class="mt-3">
+                        <button class="button btn-navigate-form-step" type="button" step_number="2">Siguiente</button>
+                    </div>
+                   </section>
+          <!-- Step 4 Content, default hidden on page load. -->
+                <section id="step-2" class="form-step d-none">
+                    <  <h2 class="font-normal">Balneario</h2>
+                    <h2>Terrazas y areas verdes</h2>
+<div class="rating">
+    <div class="rating-item">
+        <input type="radio" name="terrazayareas" id="estrella25" class="rating-input" value="3"  />
+        <label for="estrella25"><img src="excelente.png" width="300" height="300"></label>
+        <span>Muy Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="terrazayareas" id="estrella26" class="rating-input" value="2"  />
+        <label for="estrella26"><img src="bueno.png" width="300" height="300"></label>
+        <span>Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="terrazayareas" id="estrella27" class="rating-input" value="1" />
+        <label for="estrella27"><img src="malo.png" width="300" height="300"></label>
+        <span>No satisfecho</span>
+    </div>
+</div>
+
+<h2>Alberca de toboganes</h2>
+<div class="rating">
+    <div class="rating-item">
+        <input type="radio" name="albercasdetoboganes" id="estrella28" class="rating-input" value="3"  />
+        <label for="estrella28"><img src="excelente.png" width="300" height="300"></label>
+        <span>Muy Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="albercasdetoboganes" id="estrella29" class="rating-input" value="2"/>
+        <label for="estrella29"><img src="bueno.png" width="300" height="300"></label>
+        <span>Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="albercasdetoboganes" id="estrella30" class="rating-input" value= "1" />
+        <label for="estrella30"><img src="malo.png" width="300" height="300"></label>
+        <span>No satisfecho</span>
+    </div>
+</div>
+
+<h2>Alberca de rampa</h2>
+<div class="rating">
+    <div class="rating-item">
+        <input type="radio" name="albercaderampa" id="estrella31" class="rating-input" value="3" />
+        <label for="estrella31"><img src="excelente.png" width="300" height="300"></label>
+        <span>Muy Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="albercaderampa" id="estrella32" class="rating-input" value= "2"/>
+        <label for="estrella32"><img src="bueno.png" width="300" height="300"></label>
+        <span>Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="albercaderampa" id="estrella33" class="rating-input" value="1" />
+        <label for="estrella33"><img src="malo.png" width="300" height="300"></label>
+        <span>No satisfecho</span>
+    </div>
+</div>
+
+<h2 class="font-normal">Chapoteaderos y Alberca para niños</h2>
+<div class="rating">
+    <div class="rating-item">
+        <input type="radio" name="albercaparaniños" id="estrella34" class="rating-input" value="3" />
+        <label for="estrella34"><img src="excelente.png" width="300" height="300"></label>
+        <span>Muy Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="albercaparaniños" id="estrella35" class="rating-input" value="2" />
+        <label for="estrella35"><img src="bueno.png" width="300" height="300"></label>
+        <span>Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="albercaparaniños" id="estrella36" class="rating-input" value="1" />
+        <label for="estrella36"><img src="malo.png" width="300" height="300"></label>
+        <span>No satisfecho</span>
+    </div>
+</div>
+
+<h2>Alberca redonda</h2>
+<div class="rating">
+    <div class="rating-item">
+        <input type="radio" name="CHAPOTEADEROS" id="estrella37" class="rating-input" value="3" />
+        <label for="estrella37"><img src="excelente.png" width="300" height="300"></label>
+        <span>Muy Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="CHAPOTEADEROS" id="estrella38" class="rating-input" value="2"/>
+        <label for="estrella38"><img src="bueno.png" width="300" height="300"></label>
+        <span>Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="CHAPOTEADEROS" id="estrella39" class="rating-input" value="1" />
+        <label for="estrella39"><img src="malo.png" width="300" height="300"></label>
+        <span>No satisfecho</span>
+    </div>
+</div>
+     <h2>Alberca semiolimpica </h2>
+<div class="rating">
+    <div class="rating-item">
+        <input type="radio" name="ALBERCASEMIOLIMPICA" id="estrella88" class="rating-input" value="3" />
+        <label for="estrella88"><img src="excelente.png" width="300" height="300"></label>
+        <span>Muy Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="ALBERCASEMIOLIMPICA" id="estrella89" class="rating-input" value="2"/>
+        <label for="estrella89"><img src="bueno.png" width="300" height="300"></label>
+        <span>Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="ALBERCASEMIOLIMPICA" id="estrella90" class="rating-input" value="1" />
+        <label for="estrella90"><img src="malo.png" width="300" height="300"></label>
+        <span>No satisfecho</span>
+    </div>
+</div>                                                                       
+<h2 class="font-normal">Jacuzzis de balneario </h2>
+<div class="rating">
+    <div class="rating-item">
+        <input type="radio" name="JACUZZIS" id="estrella40" class="rating-input" value="3" />
+        <label for="estrella40"><img src="excelente.png" width="300" height="300"></label>
+        <span>Muy Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="JACUZZIS" id="estrella41" class="rating-input" value="2"  />
+        <label for="estrella41"><img src="bueno.png" width="300" height="300"></label>
+        <span>Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="JACUZZIS" id="estrella42" class="rating-input" value="1" />
+        <label for="estrella42"><img src="malo.png" width="300" height="300"></label>
+        <span>No satisfecho</span>
+    </div>
+</div>
+<h2>Temazcal</h2>
+<div class="rating">
+    <div class="rating-item">
+        <input type="radio" name="TEMAZCAL" id="estrella43" class="rating-input" value="3" />
+        <label for="estrella43"><img src="excelente.png" width="300" height="300"></label>
+        <span>Muy Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="TEMAZCAL" id="estrella44" class="rating-input" value="2" />
+        <label for="estrella44"><img src="bueno.png" width="300" height="300"></label>
+        <span>Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="TEMAZCAL" id="estrella45" class="rating-input" value="1" />
+        <label for="estrella45"><img src="malo.png" width="300" height="300"></label>
+        <span>No satisfecho</span>
+    </div>
+</div>
+<h2>Baños y vestidores </h2>
+<div class="rating">
+    <div class="rating-item">
+        <input type="radio" name="BAÑOS" id="estrella46" class="rating-input" value="3" />
+        <label for="estrella46"><img src="excelente.png" width="300" height="300"></label>
+        <span>Muy Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="BAÑOS" id="estrella47" class="rating-input" value="2"  />
+        <label for="estrella47"><img src="bueno.png" width="300" height="300"></label>
+        <span>Satisfecho</span>
+    </div>
+    <div class="rating-item">
+        <input type="radio" name="BAÑOS" id="estrella48" class="rating-input" value="1"  />
+        <label for="estrella48"><img src="malo.png" width="300" height="300"></label>
+        <span>No satisfecho</span>
+    </div>
+</div>
+<br><label for="feedback"><h2>Comentarios</h2></label>
+<br><textarea class="cuadros" id="feedback" name="feedback"></textarea>
+                    <div class="mt-3">
+                        <!-- ... Form inputs ... -->
+                    </div>
+                  
+                    <div class="mt-3">
+                        <button class="button btn-navigate-form-step" type="button" step_number="1">Anterior</button>
+                        <button class="button submit-btn" type="submit">Enviar</button>
+                    </div>
+                </section>
+                  
+           
+        </div>
+    </div>
+     </form>
+  <script>
+    const navigateToFormStep = (stepNumber) => {
+        // Ocultar todos los pasos del formulario
+        document.querySelectorAll(".form-step").forEach((formStepElement) => {
+            formStepElement.classList.add("d-none");
+        });
+
+        // Marcar todos los pasos como incompletos
+        document.querySelectorAll(".form-stepper-list").forEach((formStepHeader) => {
+            formStepHeader.classList.add("form-stepper-unfinished");
+            formStepHeader.classList.remove("form-stepper-active", "form-stepper-completed");
+        });
+
+        // Mostrar el paso actual
+        const currentStep = document.querySelector("#step-" + stepNumber);
+        currentStep.classList.remove("d-none");
+
+        // Desplazarse a la parte superior de la sección actual
+        currentStep.scrollIntoView({ behavior: "smooth" });
+
+        // Marcar el paso actual como activo
+        const formStepCircle = document.querySelector('li[step="' + stepNumber + '"]');
+        formStepCircle.classList.remove("form-stepper-unfinished", "form-stepper-completed");
+cle.classList.add("form-stepper-active");
+
+        // Marcar los pasos anteriores como completados
+        for (let index = 0; index < stepNumber; index++) {
+            const formStepCircle = document.querySelector('li[step="' + index + '"]');
+            if (formStepCircle) {
+                formStepCircle.classList.remove("form-stepper-unfinished", "form-stepper-active");
+                formStepCircle.classList.add("form-stepper-completed");
+            }
+        }
+    };
+
+    document.querySelectorAll(".btn-navigate-form-step").forEach((formNavigationBtn) => {
+        formNavigationBtn.addEventListener("click", () => {
+            const stepNumber = parseInt(formNavigationBtn.getAttribute("step_number"));
+            navigateToFormStep(stepNumber);
+        });
+    });
+</script>
+
+</body>
+</html>

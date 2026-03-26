@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Gestión de Tiempo para Jacuzzis</title>
+    <style>
+          body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #F3EFEF;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 30px;
+            color: #333;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #666;
+            font-size: 24px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .contenedor-jacuzzis {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .jacuzzi-container {
+            background-color: gray;
+            padding: 50px;
+            margin-bottom: 90px;
+        }
+
+        .fila {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .jacuzzi {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .jacuzzi.alquilado {
+            background-color: #FF6B6B;
+        }
+
+        .jacuzzi:hover {
+            background-color: #E8F0FE;
+        }
+
+        .group {
+            margin-bottom: 30px;
+        }
+
+        .jacuzzi span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        
+
+        .jacuzzi.disponible {
+            background-color: #9AE6B4;
+        }
+
+        .jacuzzi:hover.disponible {
+            background-color: #72D695;
+        }
+
+        .jacuzzi.no-disponible {
+            cursor: not-allowed;
+            background-color: #E0E0E0;
+        }
+
+        .jacuzzi:hover.no-disponible {
+            background-color: #D3D3D3;
+        }
+
+        /* Estilos anteriores aquí */
+
+        .boton-reset {
+            margin-top: 10px;
+            background-color: #FF8A8A;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .boton-reset:hover {
+            background-color: #FF6161;
+        }
+        @media screen and (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 15px;
+        background-color: white;
+    }
+
+    .contenedor-jacuzzis {
+        margin-bottom: 0;
+    }
+
+    .jacuzzi-container {
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .jacuzzi {
+        width: 30px;
+        height: 30px;
+        margin: 3px;
+    }
+
+    .jacuzzi span {
+        font-size: 10px;
+    }
+}
+.navbar {
+  background-color: #2bc9c8;
+  padding: 30px;
+}
+
+.navbar a {
+  color: #060606;
+  text-decoration: none;
+  margin-right: 30px;
+  
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="https://formulariodesatisfaccionparahabitaciones.000webhostapp.com/Jacuzzi.html">Termas</a>
+        <a href="#">Sala de masajes</a>
+        <a href="#">Termas vip</a>
+        <a href="#">Dashboard</a>
+        <a href="#">Totales</a>
+    </div>
+
+  
+    <div class="contenedor-jacuzzis" id="contenedor-jacuzzis"></div>
+
+    <script>
+        var contenedorJacuzzis = document.getElementById('contenedor-jacuzzis');
+
+        for (var i = 1; i <= 100; i++) {
+            if ((i - 1) % 10 === 0) {
+                var jacuzziContainer = document.createElement('div');
+                jacuzziContainer.className = 'jacuzzi-container';
+                contenedorJacuzzis.appendChild(jacuzziContainer);
+            }
+
+            var fila = document.createElement('div');
+            fila.className = 'fila';
+
+            for (var j = 1; j <= 10; j++) {
+                var jacuzzi = document.createElement('div');
+                jacuzzi.className = 'jacuzzi';
+                jacuzzi.dataset.alquilerId = ((i - 1) * 10) + j;
+
+                var numeroJacuzzi = document.createElement('span');
+                numeroJacuzzi.textContent = ('0000'+(((i - 1) * 10) + j)).slice(-3);
+                jacuzzi.appendChild(numeroJacuzzi);
+
+                fila.appendChild(jacuzzi);
+            }
+
+            jacuzziContainer.appendChild(fila);
+        }
+
+        var jacuzzis = document.getElementsByClassName('jacuzzi');
+
+        Array.from(jacuzzis).forEach(function (jacuzzi) {
+            var colores = ['white', 'green', 'red', 'blue'];
+            var colorActual = 0;
+
+            jacuzzi.addEventListener('click', function () {
+                colorActual = (colorActual + 1) % colores.length;
+                jacuzzi.style.backgroundColor = colores[colorActual];
+
+                var jacuzziId = parseInt(jacuzzi.dataset.alquilerId);
+                var color = colores[colorActual];
+
+                // Envía jacuzziId y color al servidor usando una solicitud POST
+                fetch('backend.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'jacuzziId=' + jacuzziId + '&color=' + color,
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data.message); // Muestra la respuesta del servidor (opcional)
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            });
+        });
+
+        // Función para obtener los colores de los jacuzzis desde el servidor
+        function obtenerColores() {
+            fetch('backend.php')
+                .then((response) => response.json())
+                .then((data) => {
+                    // Aplica los colores obtenidos a los jacuzzis
+                    Array.from(jacuzzis).forEach(function (jacuzzi) {
+                        var jacuzziId = parseInt(jacuzzi.dataset.alquilerId);
+                        var color = data[jacuzziId];
+                        if (color) {
+                            jacuzzi.style.backgroundColor = color;
+                        }
+                    });
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+        // Función para actualizar los colores en tiempo real
+        function actualizarColoresEnTiempoReal() {
+            obtenerColores();
+            setTimeout(actualizarColoresEnTiempoReal, 2000); // Actualizar cada 5 segundos (ajusta este valor según tus necesidades)
+        }
+
+        // Ejecuta la función para obtener los colores al cargar la página
+        obtenerColores();
+
+        // Inicia la actualización en tiempo real
+        actualizarColoresEnTiempoReal();
+    </script>
+</body>
+</html>
+
+

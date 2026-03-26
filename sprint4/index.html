@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="utf-8">
+   <meta name="description" content="Formulario de Satisfacción del Hotel Balneario San Juan Cosala">
+   <meta name="keywords" content="San Juan Cosala, hotel, balneario, formulario, satisfacción">
+   <title>Formulario de Satisfacción | Hotel Balneario San Juan Cosala</title>
+   <link rel="stylesheet" href="principal .css">
+</head>
+<body class="background-image">
+   <header>
+     
+   </header>
+   <main>
+      <div class="formulario" style="text-align: center;">
+        <div style="text-align: center;">
+            
+            <img src="logosinpondo.jpeg" width="600" height="300">
+            <div style="text-align: center;"><h1>Compartenos tu experiencia</h1> </div>
+         </div>
+         <div class="button-container">
+            <a href="Encuestahotel .html" class="round-button">Hotel</a>
+            <a href="ENCUESTABALNEARIO.html" class="round-button">Balneario</a>
+          <a href="spaencuesta.html" class="round-button">Spa</a>
+          <a href="Encuesta restaurantes .html" class="round-button">Restaurantes</a>
+       
+       
+       
+         </div>
+      </div>
+   </main>
+   <script>const backgrounds = ['PRIMERAIMAGEN.jpeg',
+    '2020.jpeg'];
+ 
+ let currentBackgroundIndex = 0;
+ 
+ function changeBackground() {
+    const body = document.querySelector('body');
+    const nextBackgroundIndex = (currentBackgroundIndex + 1) % backgrounds.length;
+    const nextBackground = `url('${backgrounds[nextBackgroundIndex]}')`;
+    body.style.backgroundImage = `url('${backgrounds[currentBackgroundIndex]}'), ${nextBackground}`;
+    currentBackgroundIndex = nextBackgroundIndex;
+ }
+ 
+ setInterval(changeBackground, 2000);
+ </script>
+
+</body>
+
+</html>

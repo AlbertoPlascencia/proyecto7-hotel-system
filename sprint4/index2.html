@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Formulario de Satisfacción" />
+	<meta name="keywords" content="San Juan Cosala" />
+	<title>Formulario de Satisfacción | Hotel Balneario San Juan Cosala</title>
+  <style>
+  
+
+/* Estilo para el formulario */
+body {
+  background-color: aqua;
+  background-image: url('ruta/de/tu/imagen.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.formulario {
+  width: 100%;
+   background-color: white;
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 50px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+ 
+}
+
+.formulario:hover {
+ 
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+h2, h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Estilo para los cuadros de entrada */
+.cuadros {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}
+
+/* Estilo para los botones redondos */
+
+
+  .boton {
+    background-color: aqua;
+    border-radius: 100px;
+    color: black;
+    padding: 30px 500px;
+    transition: transform 0.3s ease;
+  }
+  
+  .boton:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+    .rating {
+            display: flex;
+            justify-content: center;
+        }
+
+        .rating-item {
+            text-align: center;
+        }
+
+        .rating-input {
+            display: none;
+        }
+.rating-input:checked + label img {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+    border-radius: 180px;
+    transition: box-shadow 0.3s ease-in-out;
+    animation: bounce 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Agregada una animación de salto */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); /* Mantener la posición en el primer y último frame */
+    }
+    40% {
+        transform: translateY(-20px); /* Salto hacia arriba */
+    }
+    60% {
+        transform: translateY(-10px); /* Caída después del salto */
+    }
+}
+
+
+</style>
+	 <link rel="shortcut icon" href="logo.jpg"> 
+</head>
+<body>
+
+	<form action="registro.php" method="POST">
+    
+		
+        <div class="formulario">
+			<center><img src="Logo.jpg" width="650" height="300"></center>
+			<div style="text-align: right;"></div>
+			<br>
+			<br>
+			<center><strong><h1>¿Cómo calificaría usted su experiencia con nosotros?</h1></strong></center>
+			<br><br>
+			<center>
+				<br><label for="firstname"><h2>Nombre (s)</h2></label>
+				<input class="cuadros" type="text" id="firstname" name="firtname" >
+				<br><br><label for="phone"><h2>WhatsApp</h2></label>
+				<input class="cuadros" type="tel" id="phone" name="phone" >
+				<br><label for="habitacion"><h2>Numero de Habitacion</h2></label> <br>
+				<select id="room" name="room" style="width: 1010px; height: 50px;">
+    <option selected>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+    <option>11</option>
+    <option>12</option>
+    <option>13</option>
+    <option>14</option>
+    <option>15</option>
+    <option>16</option>
+    <option>17</option>
+    <option>18</option>
+    <option>19</option>
+    <option>20</option>
+    <option>21</option>
+    <option>22</option>
+    <option>23</option>
+    <option>24</option>
+    <option>25</option>
+    <option>26</option>
+    <option>27</option>
+    <option>28</option>
+    <option>29</option>
+    <option>30</option>
+    <option>31</option>
+    <option>32</option>
+    <option>33</option>
+    <option>34</option>
+    <option>35</option>
+    <option>36</option>
+    <option>37</option>
+    <option>38</option>
+    <option>101</option>
+    <option>102</option>
+    <option>103</option>
+    <option>104</option>
+    <option>105</option>
+    <option>106</option>
+    <option>107</option>
+    <option>108</option>
+</select>
+
+		    <h2>Hotel</h2>
+    <div class="rating">
+        <div class="rating-item">
+            <input type="radio" name="hotel" id="estrella3" class="rating-input" value="3"  />
+            <label for="estrella3"><img src="excelente.png" width="300" height="300"></label>
+        </div>
+        <div class="rating-item">
+            <input type="radio" name="hotel" id="estrella2" class="rating-input" value="2"  />
+            <label for="estrella2"><img src="bueno.png" width="300" height="300"></label>
+        </div>
+        <div class="rating-item">
+            <input type="radio" name="hotel" id="estrella1" class="rating-input" value="1"  />
+            <label for="estrella1"><img src="malo.png" width="300" height="300"></label>
+        </div> 
+    </div>
+             <h2>Reservaciones</h2>
+    <div class="rating">
+        <div class="rating-item">
+            <input type="radio" name="reservaciones" id="estrella6" class="rating-input" value="3"  />
+            <label for="estrella6"><img src="excelente.png" width="300" height="300"></label>
+        </div>
+        <div class="rating-item">
+            <input type="radio" name="reservaciones" id="estrella5" class="rating-input" value="2"  />
+            <label for="estrella5"><img src="bueno.png" width="300" height="300"></label>
+        </div>
+        <div class="rating-item">
+            <input type="radio" name="reservaciones" id="estrella4" class="rating-input" value="1" />
+            <label for="estrella4"><img src="malo.png" width="300" height="300"></label>
+        </div>
+    </div>
+
+    <h2>Balneario</h2>
+    <div class="rating">
+        <div class="rating-item">
+            <input type="radio" name="Balneario" id="estrella8" class="rating-input" value="3"  />
+            <label for="estrella8"><img src="excelente.png" width="300" height="300"></label>
+        </div>
+        <div class="rating-item">
+            <input type="radio" name="Balneario" id="estrella9" class="rating-input" value="2"  />
+            <label for="estrella9"><img src="bueno.png" width="300" height="300"></label>
+        </div>
+        <div class="rating-item">
+            <input type="radio" name="Balneario" id="estrella10" class="rating-input" value="1" />
+            <label for="estrella10"><img src="malo.png" width="300" height="300"></label>
+        </div>
+    </div>
+
+    <h2>Restaurantes y Bares</h2>
+    <div class="rating">
+        <div class="rating-item">
+            <input type="radio" name="Restaurantes" id="estrella11" class="rating-input" value="3"  />
+            <label for="estrella11"><img src="excelente.png" width="300" height="300"></label>
+        </div>
+        <div class="rating-item">
+            <input type="radio" name="Restaurantes" id="estrella12" class="rating-input" value="2"  />
+            <label for="estrella12"><img src="bueno.png" width="300" height="300"></label>
+        </div>
+        <div class="rating-item">
+            <input type="radio" name="Restaurantes" id="estrella13" class="rating-input" value="1"  />
+            <label for="estrella13"><img src="malo.png" width="300" height="300"></label>
+        </div>
+    </div>
+
+    <h2>Experiencia general</h2>
+    <div class="rating">
+        <div class="rating-item">
+            <input type="radio" name="experiencia_general" id="estrella15" class="rating-input" value="3"  />
+            <label for="estrella15"><img src="excelente.png" width="300" height="300"></label>
+        </div>
+        <div class="rating-item">
+            <input type="radio" name="experiencia_general" id="estrella16" class="rating-input" value="2"  />
+            <label for="estrella16"><img src="bueno.png" width="300" height="300"></label>
+        </div>
+        <div class="rating-item">
+            <input type="radio" name="experiencia_general" id="estrella17" class="rating-input" value="1"  />
+            <label for="estrella17"><img src="malo.png" width="300" height="300"></label>
+        </div>
+    </div>
+
+    <h2>Spa Tlalocan</h2>
+    <div class="rating">
+        <div class="rating-item">
+            <input type="radio" name="spa_tlalocan" id="estrella18" class="rating-input" value="3"  />
+            <label for="estrella18"><img src="excelente.png" width="300" height="300"></label>
+        </div>
+        <div class="rating-item">
+            <input type="radio" name="spa_tlalocan" id="estrella19" class="rating-input" value="2"  />
+            <label for="estrella19"><img src="bueno.png" width="300" height="300"></label>
+        </div>
+        <div class="rating-item">
+            <input type="radio" name="spa_tlalocan" id="estrella20" class="rating-input" value="1"  />
+            <label for="estrella20"><img src="malo.png" width="300" height="300"></label>
+        </div>
+    </div>
+
+<br><label for="feedback"><h2>Comentarios</h2></label>
+<br><textarea class="cuadros"id="feedback" name="feedback"   ></textarea>
+<br><input class="boton" type="submit" value="Enviar" style="background-color: aqua; border-radius: 100px; color: black; padding: 30px 450px; font-size: 2rem; animation: pulsar 2s ease-in-out infinite;">
+</form>
+</body>
+</html>

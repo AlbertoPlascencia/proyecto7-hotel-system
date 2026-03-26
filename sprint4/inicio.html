@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Formulario de Satisfacción" />
+	<meta name="keywords" content="San Juan Cosala" />
+	<title>Formulario de Satisfacción | Hotel Balneario San Juan Cosala</title>
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+<body>
+	<div style="float: left; margin-right: 80px;">
+		
+	</div>
+	
+	<hr>
+	<form action="registro.php" method="POST">
+		<div class="formulario">
+			<div style="text-align: center;">
+				<img src="Logo.jpg" width="600" height="300">
+			</div>
+			<br>
+			<br>
+			<h1>¿Cómo calificaría usted su experiencia con nosotros?</h1>
+			<br><br>
+			<center>
+				<div class="rating" style="display: flex; justify-content: center;">
+					<div style="text-align: center;">
+						<label for="estrella3"><img src="excelente.png" width="300" height="300"></label>
+						<br>
+						<input type="radio" name="estrellas" id="estrella3" value="3" />
+					</div>
+					<div style="text-align: center;">
+						<label for="estrella2"><img src="bueno.png" width="300" height="300"></label>
+						<br>
+						<input type="radio" name="estrellas" id="estrella2" value="2" />
+					</div>
+					<div style="text-align: center;">
+						<label for="estrella1"><img src="malo.png" width="300" height="300"></label>
+						<br>
+						<input type="radio" name="estrellas" id="estrella1" value="1" />
+					</div> 
+				</div> 
+			</center>
+			<br><br><br>
+		
+		</div>
+	</form>
+
+	<script>
+		window.addEventListener("load", function () {
+			const stars = document.querySelectorAll(".rating input[type='radio']");
+			for (const star of stars) {
+				star.addEventListener("change", function () {
+					const form = this.closest("form");
+					form.submit();
+				});
+			}
+		});
+
+  // Obtener el valor del parámetro de consulta "enviado"
+  const urlParams = new URLSearchParams(window.location.search);
+  const enviado = urlParams.get('enviado');
+
+  // Si se acaba de enviar una encuesta, mostrar un mensaje de alerta durante 3 segundos
+  if (enviado === 'true') {
+    alert('¡Gracias por enviar la encuesta!');
+    setTimeout(() => {
+      alert('Serás redirigido a la página principal ahora.');
+    }, 2000);
+  } 
+
+	</script>
+	  
+</body>
+</html>

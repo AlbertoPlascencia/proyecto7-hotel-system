@@ -1,0 +1,219 @@
+   body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #333;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.table-wrapper {
+  position: relative;
+  overflow: auto;
+  max-height: calc(140vh - 190px); /* Altura máxima de la tabla igual a la altura de la ventana menos el tamaño de la navbar y el espacio de margen */
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 5px 5px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #000;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background-color: yellow;
+  font-weight: bold;
+  z-index: 2; /* Asegura que el encabezado aparezca por encima del contenido de la tabla */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+  
+}
+
+.tr {
+  background-color: #f5f5f5;
+   min-width: 1px;
+}
+
+.highlight-1 {
+  background-color: red;
+  color: white;
+}
+
+.highlight-2 {
+  background-color: yellow;
+}
+
+.highlight-3 {
+  background-color: green;
+  color: white;
+}
+
+/* Ancho mínimo para cada columna */
+th:nth-child(1),
+td:nth-child(1) {
+  min-width: 5px;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  min-width:5px;
+}
+canvas {
+  margin-top: 20px;
+}
+
+.chart-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 400px;
+  margin-bottom: 20px;
+}
+
+.chart-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.chart-info span {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.chart-summary {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-summary h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.chart-summary ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.chart-summary li {
+  margin-bottom: 5px;
+}
+
+.chart-summary li span {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.chart-legend-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.chart-legend-item span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.chart-legend-item.green span {
+  background-color: #2ECC40;
+}
+
+.chart-legend-item.yellow span {
+  background-color: #FFDC00;
+}
+
+.chart-legend-item.red span {
+  background-color: #FF4136;
+}
+
+/* ... Repite para las demás columnas según sea necesario ... */
+
+/* Estilos para hacer la tabla más responsiva en dispositivos móviles */
+@media only screen and (max-width: 768px) {
+  th,
+  td {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .table-wrapper {
+    max-height: calc(100vh - 130px);
+  }
+
+  th:nth-child(1),
+  td:nth-child(1),
+  th:nth-child(2),
+  td:nth-child(2) {
+    min-width: 5px;
+  }
+
+  /* ... Ajusta el ancho mínimo de las demás columnas según sea necesario ... */
+}
+
+/* Estilos adicionales para dispositivos móviles de menor tamaño */
+@media only screen and (max-width: 480px) {
+  th,
+  td {
+    font-size: 12px;
+  }
+
+  th:nth-child(1),
+  td:nth-child(1),
+  th:nth-child(2),
+  td:nth-child(2) {
+    min-width: 10px;
+  }
+
+  /* ... Ajusta el ancho mínimo de las demás columnas según sea necesario ... */
+}

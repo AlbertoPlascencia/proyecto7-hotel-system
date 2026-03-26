@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .formulario {
+    width: 500%;
+    max-width: 1000px;
+    background-color: white;
+    padding: 200px;
+    border-radius: 5px;
+  }
+  
+  .formulario h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .formulario h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .cuadros {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  button {
+  width: 300px; /* Definimos el ancho deseado */
+  box-sizing: border-box; /* Establecemos la propiedad box-sizing para incluir el borde y el padding dentro del ancho definido */
+  padding: 10px; /* Agregamos padding al botón para darle espacio al texto */
+  border: 1px solid #ccc; /* Agregamos un borde al botón */
+  background-color: #fff; /* Establecemos el color de fondo del botón */
+  color: #333; /* Establecemos el color del texto del botón */
+  font-size: 16px; /* Establecemos el tamaño de fuente del texto del botón */
+}
+
+  
+  .parrafo {
+   
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 1000px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .lugares {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    font-size: larger;
+  }
+  
+  .rating {
+    user-select: none;
+  }
+  
+  .estrellas3 {
+    font-size: 5rem;
+    color: gold;
+    background-color: unset;
+    border: none;
+  }
+  
+  .estrellas3:hover {
+    cursor: pointer;
+  }
+  
+  .boton {
+    width: 100%;
+    padding: 50px;
+    background-color: #add8e6;
+    border: none;
+    margin-top: 50px;
+  }
+  
+  .boton:hover {
+    cursor: pointer;
+    background-color: #80cee1;
+    color: white;
+  }
+  
+  .rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .btn-rating {
+    font-size: 30px;
+    color: gray;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .btn-rating:hover,
+  .btn-rating.active {
+    color: #ffcc00;
+    cursor: pointer;
+  }
+  
+  div.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  div.rating div {
+    margin: 0 10px;
+    text-align: center;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    /* Estilos para pantallas de 768px o más grandes */
+    .formulario {
+      margin: auto;
+      margin-bottom: 50px;
+      margin-top: 50px;
+    }
+  
+    .btn-rating {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 0 5px;
+    }
+  
+    .btn-rating.active {
+      background-color: #f1c40f;
+      color: #fff;
+      border-color: #f1c40f;
+    }
+  }

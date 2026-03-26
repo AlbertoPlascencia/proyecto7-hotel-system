@@ -1,0 +1,85 @@
+/* Estilo para el formulario */
+body {
+  background-color: aqua;
+  background-image: url('ruta/de/tu/imagen.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.formulario {
+  width: 100%;
+   background-color: whitesmoke;
+  max-width: 1000px;
+  margin: 800px ;
+  padding: 600px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+ 
+}
+
+.formulario:hover {
+ 
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+h2, h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Estilo para los cuadros de entrada */
+.cuadros {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}
+
+/* Estilo para los botones redondos */
+
+
+  .boton {
+    background-color: aqua;
+    border-radius: 100px;
+    color: black;
+    padding: 30px 500px;
+    transition: transform 0.3s ease;
+  }
+  
+  .boton:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+    .rating {
+            display: flex;
+            justify-content: center;
+        }
+
+        .rating-item {
+            text-align: center;
+        }
+
+        .rating-input {
+            display: none;
+        }
+
+        .rating-input:checked + label img {
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        }
+.round-button{
+     padding: 30px 80px;
+  background-color: #2b9bca;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.round-button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+      padding: 40px 90px;
+  }

@@ -1,0 +1,162 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: aqua; /* Fondo gris suave */
+  margin: 0;
+  padding: 0;
+}
+
+.background-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background-image 1s ease-in-out;
+  background-image: url('PRIMERAIMAGEN.jpeg'), url('2020.jpeg'), url('YO.jpeg');
+  animation: slideshow 9s infinite;
+}
+
+/* Estilos del formulario */
+.formulario {
+  width: 100%;
+  max-width: 1000px;
+  background-color: whitesmoke;
+  padding: 100px;
+  border-radius: 50px;
+  margin: 100px auto;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.formulario:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Encabezados */
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Contenedor de botones */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+/* Botones redondos */
+/* ... (otros estilos) ... */
+
+/* Botones redondos */
+.round-button {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  padding: 15px 40px; /* Ajustado el padding para hacer los botones más anchos */
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 5px;
+  transition: transform 0.1s;
+  font-size: 1.5rem;
+  width: 480px; /* Ajustado el ancho de los botones */
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+/* ... (otros estilos) ... */
+
+
+.round-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Cuadros */
+.cuadros {
+  width: 100%;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Estilos para dispositivos medianos */
+@media screen and (max-width: 1318px) {
+ /* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: aqua; /* Fondo gris suave */
+  margin: 0;
+  padding: 0;
+}
+
+  .formulario {
+    margin-top: 1rem;
+    max-width: 100%;
+    margin: auto;
+    padding: 2rem;
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto; /* Cambiado de 1000px */
+  }
+
+  .round-button {
+    font-size: 4rem; /* Ajustado el tamaño de fuente */
+    width: 90%;
+    height: auto; /* Cambiado de 15% */
+  }
+}
+
+/* Estilos para dispositivos pequeños */
+@media screen and (max-width: 600px) {
+  /* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: aqua; /* Fondo gris suave */
+  margin: 0;
+  padding: 0;
+}
+
+  .formulario {
+    width: 100%;
+    background-color: whitesmoke;
+    max-width: 1000px;
+    margin: 50px;
+    padding: 20px; /* Ajustado el padding */
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto; /* Cambiado de 1500px */
+  }
+
+  .cuadros {
+    padding: 10px; /* Ajustado el padding */
+  }
+
+  .round-button {
+    font-size: 3rem; /* Ajustado el tamaño de fuente */
+    width: 90%;
+    height: auto; /* Cambiado de 20% */
+  }
+}
